@@ -1,16 +1,25 @@
+<a href="<%= Web::Routes.url(:new_entry) %>"><button type="button">New entry </button><br><br><br></a>
+
 <% if entries.any? %>
-  <table style="width:100%">
+  <div class="datagrid"><table>
   <% entries.each do |e| %>
       <tr>
       <td><%= e.title %></td>
-      <td><%= e.created_at %></td>
+      <td><%= e.created_at.strftime("%d/%m/%Y %H:%M") %></td>
       <td><%= e.author %></td>
       <td><%= e.description %></td>
-      <td><a href="<%= Web::Routes.url(:edit_entry, id: e.id) %>" class="button">Edit</a></td>
-      <td><button type="submit" form="delete-entry-<%= e.id %>" class="button danger" >Destroy</button></td>
+      
+      <td class="tiny">
+       <form id="delete-entry-<%= e.id %>" method="post" action="<%= Web::Routes.url(:entry, id: e.id) %>">
+       <input type="hidden" name="_method" value="delete" />
+   </form>
+     <a href="<%= Web::Routes.url(:edit_entry, id: e.id) %>" class="button">Edit</a>
+     <button type="submit" form="delete-entry-<%= e.id %>" class="button danger">Destroy</button>
+ </td> 
+      
     </tr>
   <% end %>
-  </table>
+  </table></div>
 <% else %>
   <p class="placeholder">There are no entries yet.</p>
 <% end %>

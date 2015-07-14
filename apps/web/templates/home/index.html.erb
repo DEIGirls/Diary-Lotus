@@ -1,8 +1,11 @@
+
+    <a href="<%= Web::Routes.url(:entries) %>"><button type="button">Admin area </button><br><br><br></a>
+
 <% if entries.any? %>
   <% entries.each do |e| %>
-    <div class="entry">
-      <h2><%= e.title %></h2>
-      <p>Created at: <%= e.created_at %></p>
+    <div id="entry">
+      <h3><%= e.title %></h3>
+      <date><%= e.created_at.strftime("%d/%m/%Y %H:%M")  %></date>
       <p>By: <%= e.author %></p>
       <p><%= e.description %></p>
     </div>
