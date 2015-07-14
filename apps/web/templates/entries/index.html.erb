@@ -1,0 +1,16 @@
+<% if entries.any? %>
+  <table style="width:100%">
+  <% entries.each do |e| %>
+      <tr>
+      <td><%= e.title %></td>
+      <td><%= e.created_at %></td>
+      <td><%= e.author %></td>
+      <td><%= e.description %></td>
+      <td><a href="<%= Web::Routes.url(:edit_entry, id: e.id) %>" class="button">Edit</a></td>
+      <td><button type="submit" form="delete-entry-<%= e.id %>" class="button danger" >Destroy</button></td>
+    </tr>
+  <% end %>
+  </table>
+<% else %>
+  <p class="placeholder">There are no entries yet.</p>
+<% end %>

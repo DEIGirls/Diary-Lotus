@@ -1,0 +1,13 @@
+<% if entries.any? %>
+  <% entries.each do |e| %>
+    <div class="entry">
+      <h2><%= e.title %></h2>
+      <p>Created at: <%= e.created_at %></p>
+      <p>By: <%= e.author %></p>
+      <p><%= e.description %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p class="placeholder">There are no entries yet.</p>
+<% end %>
+

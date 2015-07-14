@@ -1,0 +1,28 @@
+<h2>Add entry</h2>
+
+<div class="main">
+<div class="container">
+	<%=
+	  form_for :entry, '/entries' do
+	    div class: 'input' do
+	      label      :title
+	      text_field :title
+	    end
+
+	    div class: 'input' do
+	      label      :author
+	      select(:author, ['Ines', 'Rosa'], :selected => "Ines")
+	    end
+
+	    div class: 'input' do
+	      label      :description
+	      text_field :description
+	    end
+
+	    div class: 'controls' do
+	      submit 'Create Entry'
+	    end
+	  end
+	%>
+</div>
+</div>
