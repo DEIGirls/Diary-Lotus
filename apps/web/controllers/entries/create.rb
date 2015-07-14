@@ -7,7 +7,7 @@ module Web::Controllers::Entries
     def call(params)
       @entry = EntryRepository.create(Entry.new(params[:entry]))
 
-      redirect_to '/'
+      redirect_to '/entries'
     end
   end
 end

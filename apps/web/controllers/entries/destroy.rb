@@ -3,9 +3,7 @@ module Web::Controllers::Entries
     include Web::Action
 
     def call(params)
-		puts "oi"
       @entry = EntryRepository.find(params[:id])
-      puts "oi1"
       EntryRepository.delete(@entry)
       redirect_to '/entries'
     end
