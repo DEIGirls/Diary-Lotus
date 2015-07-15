@@ -9,14 +9,15 @@
       <td><%= e.author %></td>
       <td><%= e.description %></td>
       
-      <td class="tiny">
-       <form id="delete-entry-<%= e.id %>" method="post" action="<%= Web::Routes.url(:entry, id: e.id) %>">
-       <input type="hidden" name="_method" value="delete" />
-   </form>
-     <a href="<%= Web::Routes.url(:edit_entry, id: e.id) %>" class="button">Edit</a>
-     <button type="submit" form="delete-entry-<%= e.id %>" class="button danger">Destroy</button>
- </td> 
-      
+      <td>
+        <%= link_to 'Edit Entry', Web::Routes.path(:edit_entry, id: e.id), class: 'btn', title: 'Edit_Entry' %>
+      </td>
+
+      <td>
+      <%=form_for :entry, Web::Routes.path(:entry, id: e.id), method: :delete do 
+            submit 'Delete' 
+      end%>
+     </td> 
     </tr>
   <% end %>
   </table></div>
