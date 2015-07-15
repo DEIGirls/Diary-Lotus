@@ -194,6 +194,13 @@ module Web
       view.prepare do
         include Lotus::Helpers
       end
+
+      # AUTH
+      middleware.use Rack::Auth::Basic, "Protected Area" do |u, p|
+        u == 'Rosa' && p == 'banana' || 
+        u == 'Ines' && p == 'morango'
+      end
+
     end
 
     ##
