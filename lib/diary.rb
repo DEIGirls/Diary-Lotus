@@ -16,7 +16,7 @@ Lotus::Model.configure do
   #    adapter type: :sql, uri: 'mysql://localhost/diary_development'
   #
   adapter type: :sql, uri: ENV['DIARY_DATABASE_URL']
-adapter type: :memory, uri: 'memory://localhost/timestamps'
+
   ##
   # Migrations
   #
