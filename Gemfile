@@ -15,6 +15,5 @@ group :test do
 end
 
 group :production do
-  gem 'rspec'
-  gem 'capybara'
+  # gem 'puma'
 end
