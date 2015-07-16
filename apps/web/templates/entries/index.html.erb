@@ -1,5 +1,7 @@
 <a href="<%= Web::Routes.path(:new_entry) %>"><button type="button">New entry </button><br><br><br></a>
 
+<a href="/"><button type="button"> Home </button><br><br><br></a>
+
 <% if entries.any? %>
   <div class="datagrid"><table>
   <% entries.each do |e| %>
