@@ -1,0 +1,28 @@
+<a href="/"><button type="button"> Home </button><br><br><br></a>
+
+<h2>Login</h2>
+
+<div class="main">
+<div id="new_form">
+<div class="form">
+	<%=
+	  form_for :user, '/entries/auth' do
+	    div class: 'input' do
+	      label      :email
+	      text_field :email
+	    end
+
+	    div class: 'input' do
+	      label      :password
+	      password_field :password
+	    end
+
+	    div class: 'controls' do
+	      submit 'Login'
+	    end
+	  end
+	%>
+</div>
+</div>
+</div>
+

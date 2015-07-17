@@ -6,8 +6,9 @@ gem 'rake'
 gem 'lotusrb',       '0.4.1'
 gem 'lotus-model',   '~> 0.4'
 
-
 gem 'pg'
+
+gem 'bcrypt'
 
 group :test do
   gem 'rspec'

@@ -48,5 +48,14 @@ Lotus::Model.configure do
       attribute :created_at, DateTime
       attribute :updated_at, DateTime
     end
+    
+    collection :users do
+      entity     User
+      repository UserRepository
+    
+      attribute :id,   Integer
+      attribute :email, String
+      attribute :password, String
+    end
   end
 end.load!
