@@ -1,6 +1,8 @@
 module Web::Controllers::Entries
   class Create
     include Web::Action
+	include Web::Controllers::Authentication
+	include Lotus::Action::Session
 
     expose :entry
 

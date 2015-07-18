@@ -15,7 +15,7 @@ module Web::Controllers::Entries
       if user && BCrypt::Password.new(user.password) == params[:user].fetch("password")
         session[:user_id] = user.id
         redirect_to '/entries'
-    	else
+      else
         redirect_to '/entries/login'
       end
 		end
